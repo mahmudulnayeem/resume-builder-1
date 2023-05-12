@@ -1,11 +1,12 @@
 "use client";
+import Link from "next/link";
 import {
   Facebook,
   Github,
   Instagram,
   Linkedin,
   Twitter,
-} from "./../images/icon/socialIcon";
+} from "../images/icon/socialIcon";
 function ResumeTemplate({ data }) {
   //   const skill = ["React JS", "Tailwind CSS", "HTML5", "CSS3", "Firebase"];
 
@@ -96,7 +97,7 @@ function ResumeTemplate({ data }) {
   // for normal text size 16px;
   // for section titles and headers 21px;
   return (
-    <div className="max-w-[1000px] mx-auto py-10  border-2 border-x-white">
+    <div className="max-w-[1000px] mx-auto py-10  border-2 border-x-white bg-gray-100 text-black">
       {/* personal details */}
       <header className="mx-9 px-16 grid grid-cols-3 py-8 items-center">
         <div className="col-span-1">
@@ -118,13 +119,13 @@ function ResumeTemplate({ data }) {
           <p>{data?.personalDetails?.motivation}</p>
           <div className="flex gap-2 my-2 justify-end">
             {data?.socials?.linkedin && (
-              <a
+              <Link
                 className="rounded-lg"
                 href={data?.socials?.linkedin}
                 target="_blank"
               >
                 <Linkedin className="text-blue-600" />
-              </a>
+              </Link>
             )}
             {data?.socials?.github && (
               <a
