@@ -95,11 +95,23 @@ const ResumeTemplate2 = () => {
     // for normal text size 16px;
     // for section titles and headers 18px +bold;
     // for tittle font-size: 28px;
-
+    const takeFistCharOfName = (name) => {
+        let newCharArray = [];
+        const nameArray = name.split(' ')
+        nameArray.map(NA => newCharArray.push(NA.charAt(0)))
+        return newCharArray;
+    }
     return (
         <div className="max-w-[1000px] mx-auto py-10  border-2 border-x-white bg-gray-100 text-black">
             <div className='max-w-[680px] mx-auto'>
-                <h3 style={{wordSpacing:'0.4rem'}} className='text-[28px] font-semibold font-sans uppercase mb-6 tracking-wide'>{data?.personalDetails?.name}</h3>
+                <div className='relative'>
+                    <h3 style={{ wordSpacing: '0.4rem' }} className='text-[28px] font-semibold font-sans uppercase mb-6 tracking-wide'>{data?.personalDetails?.name}</h3>
+                    <div className='absolute -left-20 -top-1 font-bold bg-[#43f398] py-2 px-4 flex flex-col justify-center items-center'>
+                        {takeFistCharOfName(data?.personalDetails?.name).map(char => <p>{char}</p>)
+
+                        }
+                    </div>
+                </div>
                 <p className='mb-2 uppercase'>{data?.personalDetails?.profession}</p>
                 <p className='text-[#707678] mb-2'>
                     {data?.personalDetails?.address?.city},{" "}
@@ -161,7 +173,7 @@ const ResumeTemplate2 = () => {
                 {/* work Experience */}
                 <div>
                     <h2 className='text-[#8a8d8e] text-xs mt-14 mb-6 font-bold uppercase'>WORK EXPERIENCE</h2>
-                    {data?.experiences?.map((WE,index) => (
+                    {data?.experiences?.map((WE, index) => (
                         <div key={index}>
                             <h3 className="text-lg font-semibold mb-2 uppercase">{WE?.companyName}</h3>
                             <div className="flex gap-2 text-gray-400 ">
@@ -182,7 +194,7 @@ const ResumeTemplate2 = () => {
                 <div>
                     <h2 className='text-[#8a8d8e] text-xs mt-14 mb-6 font-bold uppercase'>EDUCATION</h2>
                     <div className="mb-4">
-                        {data?.educations?.map((ED,index) => (
+                        {data?.educations?.map((ED, index) => (
                             <div key={index} className="mt-3 mb-3">
                                 <h3 className="text-lg font-semibold mb-2 uppercase">{ED?.school}</h3>
                                 <div className="flex gap-2 text-gray-400 ">
