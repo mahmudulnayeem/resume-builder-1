@@ -11,11 +11,11 @@ export default function Home() {
   }
   return (
     <main>
-      {/* <ResumeTemplate2/> */}
-      <div className="flex min-h-screen flex-col sm:flex-row items-center justify-between sm:p-12 p-4">
+      <ResumeTemplate2/>
+      {/* <div className="flex min-h-screen flex-col sm:flex-row items-center justify-between sm:p-12 p-4">
         <Form submit={formSubmit} />
         <ResumeTemplate data={data} />
-      </div>
+      </div> */}
     </main>
 
   )
