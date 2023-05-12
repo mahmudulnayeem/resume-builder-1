@@ -2,7 +2,7 @@
 import { useFieldArray, useForm } from "react-hook-form"
 
 
-interface FormProps {
+export interface FormProps {
     personalDetails: {
         name: string
         profession: string
@@ -74,7 +74,7 @@ interface FormProps {
     }[]
 }
 
-const Form = () => {
+const Form = ({ submit }: { submit: any }) => {
 
     const { register, handleSubmit, control } = useForm<FormProps>({
         defaultValues: {
@@ -111,10 +111,10 @@ const Form = () => {
         control,
         name: 'skills'
     })
-    const onSubmit = (data: FormProps) => console.log(data)
+
     return (
         <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(submit)}
             className="flex flex-col  w-full bg-white dark:bg-slate-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-2"
         >
             {/* personal details */}
