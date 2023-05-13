@@ -115,7 +115,7 @@ const Form = ({ submit }: { submit: any }) => {
     return (
         <form
             onSubmit={handleSubmit(submit)}
-            className="flex flex-col  w-full bg-white dark:bg-slate-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-2"
+            className="flex flex-col  w-[1440px] bg-white dark:bg-slate-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-2"
         >
             {/* personal details */}
             <details open>

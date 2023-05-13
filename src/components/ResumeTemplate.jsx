@@ -97,7 +97,7 @@ function ResumeTemplate({ data }) {
   // for normal text size 16px;
   // for section titles and headers 21px;
   return (
-    <div className="max-w-[1000px] mx-auto py-10  border-2 border-x-white bg-gray-100 text-black">
+    <div className="w-[1000px] mx-auto py-10  border-2 border-x-white bg-gray-100 text-black">
       {/* personal details */}
       <header className="mx-9 px-16 grid grid-cols-3 py-8 items-center">
         <div className="col-span-1">
